@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset
 from torchvision.io import read_image
 
-# Tuğçe Hoca Tez Damar Veri Seti
 
 class CustomImageDataset(Dataset):
     def __init__(self, mode, img_dir, lbl_dir, transform=None, target_transform=None, de_train = False):

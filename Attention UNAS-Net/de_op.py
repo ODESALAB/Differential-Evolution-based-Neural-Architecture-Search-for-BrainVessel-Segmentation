@@ -430,11 +430,10 @@ class DE():
 
 if __name__ == "__main__":
     device = torch.device('cuda')
-	
-    # YARISINI KULLANDIM -DÜZELTİLECEK
-    dataset = CustomImageDataset(mode='train', img_dir=os.path.join("UNAS-Net/DataSets/Vessel_2D/original"), lbl_dir = os.path.join("UNAS-Net/DataSets/Vessel_2D/labels"), de_train=True)
-    val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("UNAS-Net/DataSets/Vessel_2D/original"), lbl_dir = os.path.join("UNAS-Net/DataSets/Vessel_2D/labels"), de_train=True)
-    test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("UNAS-Net/DataSets/Vessel_2D/original"), lbl_dir = os.path.join("UNAS-Net/DataSets/Vessel_2D/labels"), de_train=True)
+
+    dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
+    val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
+    test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
 
     train_dataloader = DataLoader(dataset, batch_size=2, shuffle=False) # Shuffle True olacak
     val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False) # Shuffle True olacak

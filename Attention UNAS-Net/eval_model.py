@@ -9,7 +9,7 @@ import torch.optim as optim
 from utils.losses import *
 from utils.metrics import *
 from torch.utils.data import DataLoader
-from utils.drive_dataset import CustomImageDataset
+from utils.vessel_dataset import CustomImageDataset
 from utils.save_best_model import BestModelCheckPoint
 
 def getBestModelNumbers():
@@ -47,9 +47,9 @@ summary(model, input_size=(2, 3, 512, 512))
 
 model.to(device)
 
-dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"))
-val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"))
-test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"))
+dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"))
+val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"))
+test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"))
 
 print("Dataset:", dataset.__len__())
 

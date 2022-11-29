@@ -9,7 +9,7 @@ from utils.distances import *
 from utils.losses import *
 from utils.metrics import *
 from torch.utils.data import DataLoader
-from utils.drive_dataset import CustomImageDataset
+from utils.vessel_dataset import CustomImageDataset
 
 """
     - Opposition-Based Differential Evolution
@@ -443,14 +443,13 @@ class DE():
 if __name__ == "__main__":
     device = torch.device('cuda')
 	
-    # YARISINI KULLANDIM -DÜZELTİLECEK
-    dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"), de_train=True)
-    val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"), de_train=True)
-    test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/DRIVE/original"), lbl_dir = os.path.join("DataSets/DRIVE/labels"), de_train=True)
+    dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
+    val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
+    test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
 
-    train_dataloader = DataLoader(dataset, batch_size=2, shuffle=False) # Shuffle True olacak
-    val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False) # Shuffle True olacak
-    test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False) # Shuffle True olacak
+    train_dataloader = DataLoader(dataset, batch_size=2, shuffle=False) 
+    val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False)
+    test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False) 
 
     loss_fn = DiceLoss()
     metric_fn = DiceCoef()

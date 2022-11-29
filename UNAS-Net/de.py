@@ -11,11 +11,6 @@ from utils.metrics import *
 from torch.utils.data import DataLoader
 from utils.vessel_dataset import CustomImageDataset
 
-"""
-    - DE sonlandırma kriteri ne olacak? Jenerasyon sayısı, eğitilen model sayısı?
-    - Early Stopping default parametreler ile mi çalışsın? Max epoch ne olacak? NB101 Figure 2 göster
-    - History için hangi bilgiler tutulmalı? Düşün?
-"""
 
 class DE():
     
@@ -364,15 +359,14 @@ class DE():
 
 if __name__ == "__main__":
     device = torch.device('cuda')
-	
-    # YARISINI KULLANDIM -DÜZELTİLECEK
+
     dataset = CustomImageDataset(mode='train', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
     val_dataset = CustomImageDataset(mode='val', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
     test_dataset = CustomImageDataset(mode='test', img_dir=os.path.join("DataSets/Vessel_2D/original"), lbl_dir = os.path.join("DataSets/Vessel_2D/labels"), de_train=True)
 
-    train_dataloader = DataLoader(dataset, batch_size=2, shuffle=False) # Shuffle True olacak
-    val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False) # Shuffle True olacak
-    test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False) # Shuffle True olacak
+    train_dataloader = DataLoader(dataset, batch_size=2, shuffle=False)
+    val_dataloader = DataLoader(val_dataset, batch_size=2, shuffle=False) 
+    test_dataloader = DataLoader(test_dataset, batch_size=2, shuffle=False)
 
     loss_fn = DiceLoss()
     metric_fn = DiceCoef()
