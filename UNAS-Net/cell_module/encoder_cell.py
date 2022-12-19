@@ -60,10 +60,8 @@ class EncoderCell(nn.Module):
                 outputs[op_idx] = op(outputs[in_nodes[0]])
         
         # Get input nodes/edges to the output node
-        #in_nodes = list(np.where(self.matrix[:, self.NBR_OP] == 1)[0])
-        #return sum([outputs[out] for out in in_nodes]) #/ len(in_nodes) # Output - Average Operation
-        output = torch.cat([o for o in outputs[1:self.NBR_OP]], axis=1)
-        return self.final_stem_conv(output)
+        in_nodes = list(np.where(self.matrix[:, self.NBR_OP] == 1)[0])
+        return sum([outputs[out] for out in in_nodes]) # Output
 
 
 
