@@ -41,7 +41,7 @@ checkpoint = BestModelCheckPoint(modelNo)
 device = torch.device('cuda')
 
 model = readPickleFile(modelNo)
-#model.reset()
+model.reset()
 print("Model No:", model.solNo, "Seed:", seed)
 summary(model, input_size=(2, 3, 512, 512))
 
