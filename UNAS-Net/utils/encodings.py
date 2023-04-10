@@ -32,7 +32,6 @@ def encode_paths(path_indices):
     return encoding
 
 def encode_caz(matrix, ops):
-    """Can Hoca'nın önerdiği encoding"""
     encoding = {f"{op}-{in_out}-{i}":0 for in_out in ["in","out"] for op in OPS for i in range(1, 7)}
     encoding.update({f"in-out-{i}":0 for i in range(1, 7)})
     encoding.update({f"out-in-{i}":0 for i in range(1, 7)})
