@@ -32,6 +32,12 @@ def encode_paths(path_indices):
     return encoding
 
 def encode_caz(matrix, ops):
+    #====================================================================
+    # This part of the code is based on the following study.
+    # from https://github.com/zekikus/Novel-Surrogate-Measures-based-on-a-Similarity-Network-for-Neural-Architecture-Search
+    # Kuş, Z., Akkan, C., & Gülcü, A. (2023). Novel surrogate measures based on a similarity network for neural architecture search. IEEE Access, 11, 22596-22613.
+    # ===================================================================
+    
     encoding = {f"{op}-{in_out}-{i}":0 for in_out in ["in","out"] for op in OPS for i in range(1, 7)}
     encoding.update({f"in-out-{i}":0 for i in range(1, 7)})
     encoding.update({f"out-in-{i}":0 for i in range(1, 7)})
