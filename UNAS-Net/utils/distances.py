@@ -38,7 +38,7 @@ def jackard_distance_caz(cell_1, cell_2):
     by comparing their caz encodings (in-out edges + path encoding - Tanimoto Index)
 
     #====================================================================
-    # This part of the code is based on FR-UNet
+    # This part of the code is based on the following study.
     # from https://github.com/zekikus/Novel-Surrogate-Measures-based-on-a-Similarity-Network-for-Neural-Architecture-Search
     # Kuş, Z., Akkan, C., & Gülcü, A. (2023). Novel surrogate measures based on a similarity network for neural architecture search. IEEE Access, 11, 22596-22613.
     # ===================================================================
