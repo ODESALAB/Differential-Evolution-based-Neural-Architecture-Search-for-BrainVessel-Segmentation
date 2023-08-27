@@ -36,6 +36,7 @@ volume = {46},
 pages = {101502},
 year = {2023},
 issn = {2215-0986},
-doi = {https://doi.org/10.1016/j.jestch.2023.101502}
+doi = {https://doi.org/10.1016/j.jestch.2023.101502},
+author = {Zeki Kuş and Berna Kiraz and Tuğçe Koçak Göksu and Musa Aydın and Esra Özkan and Atay Vural and Alper Kiraz and Burhanettin Can}
 }
 ```
